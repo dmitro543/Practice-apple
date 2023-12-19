@@ -1,14 +1,10 @@
-@use '../../lib/servise.scss' as s;
-
-.page {
-    font-family: 'Roboto', sans-serif;
-    font-size: s.size();
-    background-color: s.color('background');
-}
+@use './space.scss' as s;
+@use './var.scss' as var;
 
 .section {
     display: flex;
     justify-content: center;
+    padding: 0 s.space(4);
 }
 
 $contentSizeMap: (
@@ -21,9 +17,8 @@ $contentSizeMap: (
 .section-content {
     max-width: 1200px;
     width: 100%;
-    padding: 0 s.space(4);
     
-    @each $key, $value in s.$screenMap {
+    @each $key, $value in var.$screenMap {
         @media all and ( width < $value) {
             max-width: map-get($contentSizeMap , $key );
         }

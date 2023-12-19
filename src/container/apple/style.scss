@@ -1,0 +1,259 @@
+@use '../../lib/servise.scss' as s;
+
+.header-content {
+    @extend .section-content;
+    display: flex;
+    padding: s.space(4);
+    justify-content: space-between;
+    background-color: s.color('backgroundDark');
+}
+
+.head {
+    @extend .section;
+    background-color: s.color('backgroundDark');
+}
+
+.head-menu {
+    display: flex;
+    gap: s.space(8);
+    align-items: center
+}
+
+.header-icon {
+    @include s.click;
+}
+
+.header-link {
+    color: s.color('whitelight');
+    @include s.click;
+}
+
+.header-link {
+    font-size: s.size('small');
+}
+
+.white {
+    height: 45px;
+    background: #fff;
+}
+
+.block {
+    padding-left: 170px;
+    padding-top: 15px
+}
+
+.block-title {
+    color: rgba(66, 66, 69, 1); 
+}
+
+.cursor {
+    position: relative;
+    left: 350px;
+}
+
+.product {
+    @extend .section;
+    display: flex;
+    padding-top: s.space(20);
+    padding-bottom: s.space(20);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.product-content {
+    display: grid;
+    gap: s.space(5);
+    text-align: center;
+    align-content: center;
+}
+
+.product-title {
+    font-size: 56px;
+}
+
+.product-description {
+    font-size: 28px;
+}
+
+.product-action {
+   display: flex;
+   align-items: center;
+   gap: s.space(5);
+   justify-content: center;
+   @include s.click
+}
+
+.product-big {
+    height: 500vh;
+    background-size: cover;
+    max-height: 600px;
+}
+
+.product-small {
+    height: 100vh;
+    background-size: cover;
+    max-height: 600px;
+}
+
+
+.product-dark {
+   .product-title, .product-description {
+      color: s.color('background');
+   }
+
+   background-color: #000;
+}
+
+.product-light {
+    .product-title, .product-description {
+       color: s.color('fontDARK');
+    }
+
+    background-color: #fff;
+}
+
+.product-top {
+    .product-content {
+        align-content: flex-start;
+    }
+}
+
+.product-bottom {
+    .product-content {
+        align-content: flex-end;
+    }
+}
+
+$productImage: (
+    'product-iphone' '/img/iphone-14pro.png',
+    'product-iphone-pro' '/img/iphone.png'
+);
+
+@each $class, $url in $productImage {
+    .product--#{$class} {
+      background-image: url(#{$url});
+    }
+}
+
+.product-iphone {
+    background-image: url('/img/iphone-14pro.png');
+}
+
+.product-link{
+    @include s.linkAction;
+}
+ 
+.product-iphone-pro {
+    background-image: url('/img/iphone.png');
+}
+
+.product-iwatch {
+    background-image: url('/img/iwatch.png');
+}
+
+.section-double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.product-trade-in {
+    background-image: url('/img/Trade-in.png');
+}
+
+.product-layer {
+    background-image: url('/img/layer.png');
+}
+
+.product-small {
+    .product-title {
+       font-size: 40px;
+    }
+
+    .product-description {
+       font-size: 20px;
+    }
+}
+
+.product-ipad {
+    background-image: url('/img/ipad.png');
+}
+
+.product-picture {
+    background-image: url('/img/picture-apple.png');
+}
+
+.product-airpods {
+    background-image: url('/img/airpods.png');
+}
+
+.product-card-apple {
+    background-image: url('/img/card-apple.png');
+}
+
+.product-ipad-title {
+    font-size: 40px;
+    color: #fff;
+    width: 274px;
+}
+
+.product-ipad-description {
+    font-size: 20px;
+    color: #fff;
+}
+
+.product-airpods-title {
+    font-size: 40px;
+    width: 336px;
+}
+
+.product-airpods-description {
+    font-size: 20px;
+    width: 260px;
+    position: relative;
+    left: 32px;
+}
+
+.product-card-title {
+    font-size: 56px;
+    height: 52px;
+}
+
+.product-card-description {
+    font-size: 20px;
+    width: 263;
+    height: 50px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 39px;
+    padding-bottom: 70px;
+    margin: 0 auto;
+}
+
+.footer-nav {
+    display: grid;
+    position: relative;
+    top: 40px;
+    right: 68px;
+}
+
+.footer-description {
+    font-weight: 100;
+    color: rgba(66, 66, 69, 1);
+}
+
+.adaptive {
+    transition: opacity 0.7s;
+    cursor: pointer;
+}
+ 
+ .adaptive:hover {
+     opacity: 0.7;
+     color: blue;
+ }
+ 
+ .adaptive:active {
+     opacity: var(--opacity-2);
+ }
